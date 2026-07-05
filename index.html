@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moacir Oliveira | Multi-Empresário & Criador de Oportunidades</title>
+  <meta name="description"
+    content="Moacir Oliveira. Conectando negócios, esporte e impacto social para construir legados reais." />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://moaciroliveira.com.br/" />
+  <meta property="og:title" content="Moacir Oliveira | Multi-Empresário & Criador de Oportunidades" />
+  <meta property="og:description" content="Conectando negócios, esporte e impacto social para construir legados reais." />
+  <meta property="og:image" content="assets/moacir-hero.webp" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://moaciroliveira.com.br/" />
+  <meta property="twitter:title" content="Moacir Oliveira | Multi-Empresário & Criador de Oportunidades" />
+  <meta property="twitter:description" content="Conectando negócios, esporte e impacto social para construir legados reais." />
+  <meta property="twitter:image" content="assets/moacir-hero.webp" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fontes: Outfit (Principal) + Poppins (Secundária) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind Custom Config -->
+  <script src="js/config.tailwind.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+
+<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-white">
+  <!-- Texture Overlay (Grain) - MANTIDO DO DESIGN 2 -->
+  <div class="fixed inset-0 pointer-events-none z-[1] bg-noise mix-blend-overlay"></div>
+
+  <!-- Ambient Light Glow (Top Right) - MANTIDO DO DESIGN 2 -->
+  <div
+    class="fixed top-0 right-0 w-[800px] h-[800px] glow-spot pointer-events-none z-0 translate-x-1/3 -translate-y-1/3">
+  </div>
+
+  <!-- Header Gradient for Navbar Visibility -->
+  <div class="fixed top-0 left-0 w-full h-32 bg-gradient-to-b from-black/80 to-transparent z-40 pointer-events-none">
+  </div>
+
+  <!-- NAVBAR High-End - MANTIDO DO DESIGN 2 -->
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 border-b border-transparent">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <!-- Logo Minimalista -->
+      <a href="#" class="relative z-50 group">
+        <span class="block w-12">
+          <img src="./assets/brand-icon-white.webp" alt="Logo" class="w-full h-auto" />
+        </span>
+        <span
+          class="absolute -bottom-2 left-0 w-0 h-[1px] bg-brand-accent transition-all duration-300 group-hover:w-full"></span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div
+        class="hidden lg:flex items-center gap-6 lg:gap-12 text-xs font-bold tracking-[0.2em] uppercase text-gray-400">
+        <a href="#sobre" class="hover:text-white transition-colors relative overflow-hidden group">
+          <span class="relative z-10">Quem é Moacir</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-[1px] bg-brand-accent transform -translate-x-full transition-transform group-hover:translate-x-0"></span>
+        </a>
+        <a href="#metodo" class="hover:text-white transition-colors relative overflow-hidden group">
+          <span class="relative z-10">Ecossistema</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-[1px] bg-brand-accent transform -translate-x-full transition-transform group-hover:translate-x-0"></span>
+        </a>
+        <a href="#trajetoria" class="hover:text-white transition-colors relative overflow-hidden group">
+          <span class="relative z-10">A Jornada</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-[1px] bg-brand-accent transform -translate-x-full transition-transform group-hover:translate-x-0"></span>
+        </a>
+        <a href="#galeria" class="hover:text-white transition-colors relative overflow-hidden group">
+          <span class="relative z-10">Galeria</span>
+          <span
+            class="absolute bottom-0 left-0 w-full h-[1px] bg-brand-accent transform -translate-x-full transition-transform group-hover:translate-x-0"></span>
+        </a>
+
+        <a href="#contato"
+          class="ml-4 px-5 py-2 bg-white text-black font-extrabold hover:bg-brand-accent hover:text-white transition-all duration-300 clip-path-slant text-sm">
+          FALAR COM MOACIR
+        </a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="menu-btn" class="lg:hidden text-white z-50 relative group">
+        <div class="space-y-2">
+          <span class="block w-8 h-[2px] bg-white transition-all group-hover:w-6 ml-auto"></span>
+          <span class="block w-6 h-[2px] bg-brand-accent transition-all group-hover:w-8"></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MENU MOBILE OVERLAY - MANTIDO DO DESIGN 2 -->
+  <div id="mobile-menu"
+    class="fixed inset-0 bg-brand-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-500 transform scale-95">
+    <div class="flex flex-col gap-10 text-center">
+      <a href="#sobre"
+        class="text-5xl font-serif text-white hover:text-brand-accent transition-colors mobile-link italic">Quem é
+        Moacir</a>
+      <a href="#metodo"
+        class="text-5xl font-serif text-white hover:text-brand-accent transition-colors mobile-link italic">Ecossistema</a>
+      <a href="#trajetoria"
+        class="text-5xl font-serif text-white hover:text-brand-accent transition-colors mobile-link italic">A
+        Jornada</a>
+      <a href="#galeria"
+        class="text-5xl font-serif text-white hover:text-brand-accent transition-colors mobile-link italic">Galeria</a>
+      <a href="#contato"
+        class="text-sm font-bold uppercase tracking-[0.3em] text-brand-accent mt-8 mobile-link border border-brand-accent/30 px-8 py-4">Aplicar
+        Agora</a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION: THE AUTHORITY (Design 2 Visual + Copy 3 Adaptada) -->
+  <header
+    class="relative min-h-screen flex flex-col justify-end overflow-hidden bg-brand-black pt-32 pb-12 md:pb-16 lg:pb-24">
+    <!-- Background Text (Depth Layer) - MANTIDO DO DESIGN 2 -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none z-0">
+      <h1 class="text-[18vw] leading-none font-serif font-black text-stroke opacity-20">
+        LEGACY
+      </h1>
+    </div>
+
+    <!-- Hero Image Composition - MANTIDO DO DESIGN 2 -->
+    <div class="absolute inset-0 z-0 lg:left-[25%] opacity-100">
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/60 to-brand-black/30 lg:bg-gradient-to-r lg:from-brand-black lg:via-transparent lg:to-transparent z-10">
+      </div>
+      <!-- Using a distinct, authoritative image -->
+      <img src="assets/moacir-hero.webp" alt="Moacir Oliveira - Autoridade e Legado"
+        class="w-full h-full object-cover object-[center_-2rem] lg:object-top mix-blend-luminosity opacity-80 lg:opacity-100" />
+    </div>
+
+    <div class="container mx-auto px-6 relative z-20">
+      <div class="max-w-full md:max-w-xl lg:max-w-3xl xl:max-w-3xl">
+        <!-- Main Headline -->
+        <h2
+          class="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-semibold text-white leading-[0.95] mb-8 tracking-tight drop-shadow-2xl">
+          Oportunidades <br />
+          nascem de <br />
+          <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-lime-500 relative">
+            Conexões Reais.
+            <!-- Decorative underline -->
+            <svg class="absolute w-full h-4 -bottom-2 left-0 text-brand-accent opacity-80" viewBox="0 0 200 9"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M2.00025 6.99997C25.7501 9.76164 59.0883 2.05438 113.844 2.00035C136.257 1.97825 196.793 -1.82119 197.999 5.00023"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+          </span>
+        </h2>
+
+        <!-- Subheadline & Signature -->
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 mb-8">
+          <div
+            class="bg-gradient-to-r from-brand-accent/10 to-transparent p-4 md:p-6 border-l-4 border-brand-accent rounded-r-lg">
+            <p class="text-white/90 text-base md:text-xl max-w-md leading-relaxed font-medium drop-shadow-md">
+              Caminhar sozinho é possível, mas
+              <span class="text-brand-accent font-bold">juntos</span> chegamos muito mais longe.
+            </p>
+            <p class="text-white/90 text-sm md:text-lg max-w-md leading-relaxed font-medium mt-2 drop-shadow-md">
+              Não quero ser apenas um consultor, quero ser o <strong class="text-white">parceiro</strong> que ajuda você a destravar o próximo nível, seja nos negócios, no esporte ou na vida.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTAs (Amigáveis) -->
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="#metodo"
+            class="group bg-brand-accent text-white px-8 py-4 text-base font-bold flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-all duration-500 shadow-[0_0_30px_-5px_rgba(164,173,102,0.6)]">
+            CONHECER O ECOSSISTEMA
+            <i data-lucide="arrow-down" class="w-5 h-5 group-hover:translate-y-1 transition-transform"></i>
+          </a>
+          <a href="#sobre"
+            class="px-8 py-4 border border-white/10 text-white font-bold hover:bg-white/5 transition-all flex items-center justify-center gap-3 backdrop-blur-sm">
+            CONHECER MINHA HISTÓRIA
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down Indicator - MANTIDO DO DESIGN 2 -->
+  </header>
+
+  <!-- TICKER -->
+  <div class="bg-brand-gray border-y border-white/5 py-6 overflow-hidden relative z-30">
+    <div
+      class="flex whitespace-nowrap animate-marquee items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="check-circle" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">+15 Anos de Mercado</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="briefcase" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">08 Empresas Ativas</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="trending-up" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">+100M Gerados</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="medal" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">Iron Man Finisher</span>
+      </div>
+      <!-- Repeat 1 -->
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="check-circle" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">+15 Anos de Mercado</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="briefcase" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">08 Empresas Ativas</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="trending-up" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">+100M Gerados</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="medal" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">Iron Man Finisher</span>
+      </div>
+      <!-- Repeat 2 -->
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="check-circle" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">+15 Anos de Mercado</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="briefcase" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">08 Empresas Ativas</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="trending-up" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">+100M Gerados</span>
+      </div>
+      <div class="flex items-center gap-3 md:gap-4 pr-12 md:pr-24">
+        <i data-lucide="medal" class="text-brand-accent w-5 h-5"></i><span
+          class="text-white font-serif italic text-2xl">Iron Man Finisher</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOBRE/MANIFESTO SECTION (Visual Design 2 + Copy Design 3) -->
+  <section id="sobre" class="py-32 bg-brand-black relative">
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-16 items-start">
+        <!-- Title & Stats - VISUAL DESIGN 2 -->
+        <!-- Sticky apenas no LG (Desktop) -->
+        <!-- Title & Stats - VISUAL DESIGN 2 + ENHANCED -->
+        <!-- Sticky apenas no LG (Desktop) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-32 relative">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="h-px w-8 bg-brand-accent"></span>
+            <span class="text-brand-accent font-bold tracking-[0.2em] uppercase text-xs">Quem é Moacir Oliveira</span>
+          </div>
+
+          <h2 class="text-5xl md:text-7xl font-serif text-white mb-10 leading-none">
+            Mais do que <br />
+            Negócios, um
+            <br />
+            <span class="italic text-brand-accent relative inline-block">
+              Parceiro.
+              <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-accent opacity-60" viewBox="0 0 100 10"
+                preserveAspectRatio="none">
+                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="2" fill="none" />
+              </svg>
+            </span>
+          </h2>
+        </div>
+
+        <!-- Text Content - COPY DESIGN 3 + ENHANCED TYPOGRAPHY -->
+        <div class="lg:col-span-7 space-y-8 text-lg text-gray-400 font-light leading-relaxed">
+          <p
+            class="first-letter:text-6xl first-letter:font-serif first-letter:text-white first-letter:float-left first-letter:mr-3 first-letter:leading-none">
+            Oi, eu sou o Moacir Oliveira.
+            <span class="text-white font-medium">Acredito que o sucesso só faz sentido quando é compartilhado</span>. Minha jornada não foi construída sozinho, e a sua também não precisa ser. Estou aqui para ser a ponte, o cara que abre as portas e caminha ao seu lado no campo de batalha dos negócios e da vida.
+          </p>
+
+          <ul class="space-y-4 mt-6 border-l border-white/10 pl-6">
+            <li class="flex items-start gap-3">
+              <i data-lucide="users" class="w-5 h-5 text-brand-accent mt-1 shrink-0"></i>
+              <span><strong class="text-white">Tamo junto no jogo:</strong> Eu vivo os mesmos desafios que você e aplico tudo nas minhas próprias empresas.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="handshake" class="w-5 h-5 text-brand-accent mt-1 shrink-0"></i>
+              <span><strong class="text-white">Papo Reto:</strong> Sem frescura ou termos complicados. Foco no que realmente gera resultado e impacto.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="heart" class="w-5 h-5 text-brand-accent mt-1 shrink-0"></i>
+              <span><strong class="text-white">Mais que CNPJ:</strong> Valorizo a família, o esporte e o impacto social tanto quanto o lucro.</span>
+            </li>
+          </ul>
+          <div class="pt-8 relative group">
+            <div
+              class="absolute inset-0 bg-brand-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay">
+            </div>
+            <img src="assets/moacir-portrait-studio-shirt-collar.webp"
+              class="w-full h-auto aspect-[3/4] object-cover object-center filter brightness-110 transition-all duration-700 border border-white/10"
+              alt="Moacir Oliveira Lifestyle" />
+            <p class="text-xs text-right mt-2 text-gray-600 uppercase tracking-widest">
+              Moacir Oliveira - Iron Man
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD (Visual Design 2 + Copy Design 3) -->
+  <section id="metodo" class="py-32 bg-brand-dark relative overflow-hidden">
+    <!-- Glow Spot Background -->
+    <div
+      class="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-brand-accent/5 blur-[120px] rounded-full pointer-events-none">
+    </div>
+
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <!-- Copy Design 3 -->
+        <h2 class="text-4xl md:text-6xl font-serif text-white mb-6">
+          Os 3 <span class="italic text-brand-accent">Pilares .</span>
+        </h2>
+        <p class="text-gray-400">
+          Conheça as três frentes que movem minha jornada: negócios, impacto social e saúde.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Pilar 1: Intermediário de Negócios -->
+        <div
+          data-pilar="negocios"
+          class="pillar-card cursor-pointer glass-panel p-6 sm:p-8 lg:p-10 min-h-[320px] flex flex-col justify-between group hover:border-brand-accent/30 transition-all relative overflow-hidden">
+          <div
+            class="absolute right-0 top-0 w-64 h-64 bg-gradient-to-br from-brand-accent/10 to-transparent rounded-full blur-3xl group-hover:bg-brand-accent/20 transition-all">
+          </div>
+
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="briefcase" class="text-brand-accent w-5 h-5 md:w-6 md:h-6"></i>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-serif text-white mb-2 md:mb-3">
+              Ecossistema de <span class="text-brand-accent italic">Negócios</span>
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base mb-6">
+              Conexões estratégicas e intermediação através de marcas sólidas como 
+              <strong class="text-white">Decisor</strong>, <strong class="text-white">Serasa</strong> e 
+              <strong class="text-white">Certificação Digital</strong>.
+            </p>
+            <!-- Sub-serviços Decisor -->
+            <div class="grid grid-cols-2 gap-2 text-[10px] uppercase tracking-widest font-bold">
+              <div class="flex items-center gap-2 text-gray-400 bg-white/5 p-2 rounded border border-white/5">
+                <i data-lucide="shield-check" class="w-3 h-3 text-brand-accent"></i> Certificação
+              </div>
+              <div class="flex items-center gap-2 text-gray-400 bg-white/5 p-2 rounded border border-white/5">
+                <i data-lucide="car" class="w-3 h-3 text-brand-accent"></i> Automotivas
+              </div>
+              <div class="flex items-center gap-2 text-gray-400 bg-white/5 p-2 rounded border border-white/5">
+                <i data-lucide="file-signature" class="w-3 h-3 text-brand-accent"></i> Assinatura Digital
+              </div>
+              <div class="flex items-center gap-2 text-gray-400 bg-white/5 p-2 rounded border border-white/5">
+                <i data-lucide="bar-chart-3" class="w-3 h-3 text-brand-accent"></i> Serasa
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-4 md:mt-0">
+            <span
+              class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all">
+              <i data-lucide="plus" class="text-white w-4 h-4 md:w-5 md:h-5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Pilar 2: Pilar Social -->
+        <div
+          data-pilar="social"
+          class="pillar-card cursor-pointer glass-panel p-6 sm:p-8 lg:p-10 min-h-[320px] flex flex-col justify-between group hover:border-brand-accent/30 transition-all relative overflow-hidden">
+          <div
+            class="absolute right-0 top-0 w-64 h-64 bg-gradient-to-br from-brand-accent/10 to-transparent rounded-full blur-3xl group-hover:bg-brand-accent/20 transition-all">
+          </div>
+
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="heart-handshake" class="text-brand-accent w-5 h-5 md:w-6 md:h-6"></i>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-serif text-white mb-2 md:mb-3">
+              Impacto <span class="text-brand-accent italic">Social</span>
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base mb-6">
+              Compromisso real através da <strong class="text-white">Turma do Bem</strong>, 
+              <strong class="text-white">Projeto Sorriso</strong> e <strong class="text-white">Liga da Superação</strong>. 
+            </p>
+            <!-- Fotos Social Integradas -->
+            <div class="flex gap-2 h-20 overflow-hidden rounded-lg opacity-60 group-hover:opacity-100 transition-opacity mb-4">
+              <img src="originals/social-projects-group-2.webp" class="w-1/2 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Projeto Social">
+              <img src="originals/social-projects-hospital-costumes.webp" class="w-1/2 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Liga da Superação">
+            </div>
+            <p class="text-[10px] text-brand-accent font-bold uppercase tracking-[0.2em] animate-pulse">
+              <i data-lucide="heart" class="inline w-3 h-3 mr-1"></i> Bora ser voluntário?
+            </p>
+          </div>
+
+          <div class="flex justify-end mt-4 md:mt-0">
+            <span
+              class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all">
+              <i data-lucide="plus" class="text-white w-4 h-4 md:w-5 md:h-5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Pilar 3: Transformação da Saúde -->
+        <div
+          data-pilar="saude"
+          class="pillar-card cursor-pointer glass-panel p-6 sm:p-8 lg:p-10 min-h-[320px] flex flex-col justify-between group hover:border-brand-accent/30 transition-all relative overflow-hidden sm:col-span-2 lg:col-span-1">
+          <div
+            class="absolute right-0 top-0 w-64 h-64 bg-gradient-to-br from-brand-accent/10 to-transparent rounded-full blur-3xl group-hover:bg-brand-accent/20 transition-all">
+          </div>
+
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform">
+              <i data-lucide="heart-pulse" class="text-brand-accent w-5 h-5 md:w-6 md:h-6"></i>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-serif text-white mb-2 md:mb-3">
+              Saúde & <span class="text-brand-accent italic">Alta Performance</span>
+            </h3>
+            <p class="text-gray-400 text-sm md:text-base mb-6">
+              A jornada de transformação pessoal após os 45 anos: <strong class="text-white">Iron Man</strong> e 
+              <strong class="text-white">Meias Maratonas</strong>. Disciplina no esporte que transborda para os negócios.
+            </p>
+            <!-- Fotos Saúde Integradas -->
+            <div class="flex gap-2 h-20 overflow-hidden rounded-lg opacity-60 group-hover:opacity-100 transition-opacity">
+              <img src="assets/moacir-running-action-1.webp" class="w-1/2 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Iron Man">
+              <img src="assets/moacir-running-action-1.webp" class="w-1/2 object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Superação">
+            </div>
+          </div>
+
+          <div class="flex justify-end mt-4 md:mt-0">
+            <span
+              class="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-accent group-hover:border-brand-accent transition-all">
+              <i data-lucide="plus" class="text-white w-4 h-4 md:w-5 md:h-5"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trajetoria" class="py-20 md:py-32 bg-brand-dark/20 relative border-t border-white/5 overflow-hidden">
+    <!-- Ambient Glow -->
+    <div
+      class="absolute right-0 bottom-0 w-[600px] h-[600px] bg-brand-accent/5 blur-[150px] rounded-full pointer-events-none">
+    </div>
+
+    <div class="container mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-24 items-center">
+        <!-- Text Column -->
+        <div class="lg:col-span-6 order-1">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="h-px w-8 bg-brand-accent"></span>
+            <span class="text-brand-accent font-bold tracking-[0.2em] uppercase text-xs">A Jornada</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-white mb-8 leading-tight">
+            De Sonhador a <br />
+            <span class="text-brand-accent italic">Parceiro de Caminhada.</span>
+          </h2>
+
+          <div class="space-y-6 text-lg text-gray-400 font-light leading-relaxed">
+            <p>
+              Ao longo de 15 anos, aprendi que o topo da montanha só é bom se você tiver com quem dividir a vista. O que
+              começou com metas agressivas evoluiu para o prazer de ver outros crescerem junto comigo.
+            </p>
+            <p>
+              Hoje, minha missão é simples:
+              <strong class="text-white font-medium">caminhar ao lado de quem quer crescer de verdade.</strong>
+            </p>
+            <p>
+              Tudo o que construí nas minhas 8 empresas está aqui, de peito aberto, para a gente trocar experiências e construir algo maior. Sem barreiras, de parceiro para parceiro.
+            </p>
+          </div>
+
+          <div class="mt-12 flex flex-wrap items-center gap-y-6 gap-x-8">
+            <div class="flex items-center gap-6 sm:gap-8">
+              <div>
+                <p class="text-2xl sm:text-3xl font-serif text-white font-bold">+15</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest whitespace-nowrap">Anos de Estrada</p>
+              </div>
+              <div class="h-10 w-px bg-white/10"></div>
+              <div>
+                <p class="text-2xl sm:text-3xl font-serif text-white font-bold">08</p>
+                <p class="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest whitespace-nowrap">Empresas</p>
+              </div>
+            </div>
+            <div class="hidden sm:block h-10 w-px bg-white/10"></div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-serif text-white font-bold">100%</p>
+              <p class="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest whitespace-nowrap">Comprometimento</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Image Column -->
+        <div class="lg:col-span-6 relative group order-2 mt-16 lg:mt-0 max-w-2xl mx-auto lg:max-w-none">
+          <!-- Background decorative element -->
+          <div class="absolute -top-10 -right-10 text-[15vw] lg:text-[12vw] font-serif font-black text-stroke opacity-5 pointer-events-none select-none">
+            M
+          </div>
+          
+          <div
+            class="absolute inset-0 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-brand-accent/10 blur-[100px] rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-1000">
+          </div>
+          
+          <div class="relative z-10 overflow-hidden rounded-2xl border border-white/5 bg-brand-black/40 backdrop-blur-sm">
+             <img src="assets/moacir-portrait-studio-9347.webp" alt="Estrutura e Solidez"
+              class="w-full h-auto transform group-hover:scale-105 transition-all duration-1000 drop-shadow-2xl" />
+             
+             <!-- Floating Badge -->
+             <div class="absolute bottom-6 right-6 bg-brand-accent p-3 sm:p-4 rounded-xl shadow-2xl transform translate-y-2 group-hover:translate-y-0 transition-transform duration-700">
+                <i data-lucide="award" class="text-white w-6 h-6 sm:w-8 sm:h-8 mb-1 sm:mb-2"></i>
+                <p class="text-white font-bold text-[10px] sm:text-xs leading-tight uppercase">MINDSET DE<br>VENCEDOR</p>
+             </div>
+          </div>
+          
+          <!-- Accent lines -->
+          <div class="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-24 h-24 sm:w-32 sm:h-32 border-l-2 border-b-2 border-brand-accent/30 pointer-events-none"></div>
+          <div class="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 border-r-2 border-t-2 border-brand-accent/30 pointer-events-none"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION - REFINED -->
+  <section id="depoimentos" class="py-16 bg-brand-dark relative overflow-hidden">
+    <!-- Background Decoration -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none select-none z-0 opacity-5">
+      <h2 class="text-[20vw] leading-none font-serif font-black text-stroke uppercase">
+        Impacto
+      </h2>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-8">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="h-px w-8 bg-brand-accent"></span>
+            <span class="text-brand-accent font-bold tracking-[0.2em] uppercase text-[10px]">Vozes do Ecossistema</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">
+            O que dizem sobre <br />
+            <span class="italic text-brand-accent">Nossa Parceria.</span>
+          </h2>
+        </div>
+        <div class="hidden md:block">
+          <i data-lucide="quote" class="w-16 h-16 text-brand-accent opacity-20"></i>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch max-w-7xl mx-auto">
+        <!-- Testimonial 1 - Featured -->
+        <div class="lg:col-span-7 group">
+          <div class="h-full glass-panel p-8 md:p-10 relative overflow-hidden transition-all duration-700 hover:border-brand-accent/40 group flex flex-col justify-between">
+            <!-- Decorative Number -->
+            <span class="absolute top-6 right-8 text-7xl font-serif font-black text-white/5 group-hover:text-brand-accent/10 transition-colors">01</span>
+            
+            <div class="relative z-10">
+              <span class="inline-block px-3 py-1 bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-[9px] font-bold uppercase tracking-widest mb-8 rounded-full">#Estratégia & Negócios</span>
+              
+              <blockquote class="mb-10">
+                <p class="text-white text-xl md:text-3xl font-medium italic leading-[1.4] relative">
+                  <span class="absolute -left-6 -top-2 text-brand-accent opacity-30 text-5xl">"</span>
+                  Em apenas 3 meses, o Moacir reestruturou minha diretoria e tivemos o primeiro mês de <span class="text-brand-accent">7 dígitos</span>. A clareza dele e o foco no resultado são o diferencial que o mercado precisava.
+                </p>
+              </blockquote>
+            </div>
+
+            <div class="flex items-center gap-5 pt-8 border-t border-white/5 relative z-10">
+              <div class="relative shrink-0">
+                <div class="absolute inset-0 bg-brand-accent blur-lg opacity-20 rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=150" class="w-16 h-16 rounded-xl object-cover grayscale group-hover:grayscale-0 transition-all duration-700 border border-brand-accent/30 relative z-10" alt="Ricardo Silva">
+              </div>
+              <div>
+                <h4 class="text-white text-lg font-bold">Ricardo Silva</h4>
+                <p class="text-brand-accent text-xs font-medium uppercase tracking-widest">CEO TechVision</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Testimonial 2 + CTA -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="glass-panel p-8 relative overflow-hidden transition-all duration-700 hover:border-brand-accent/40 group flex flex-col justify-between h-full">
+             <span class="absolute top-4 right-6 text-5xl font-serif font-black text-white/5 group-hover:text-brand-accent/10 transition-colors">02</span>
+             
+             <div class="relative z-10">
+               <span class="inline-block px-3 py-1 bg-white/5 border border-white/10 text-gray-400 text-[9px] font-bold uppercase tracking-widest mb-6 rounded-full">#Impacto Social</span>
+               
+               <blockquote class="mb-8">
+                 <p class="text-white text-lg italic leading-relaxed">
+                   "O engajamento do Moacir com a <span class="text-brand-accent">Turma do Bem</span> transformou nosso alcance de forma incrível. Ele não apenas doa, ele se envolve e mobiliza parceiros."
+                 </p>
+               </blockquote>
+             </div>
+             
+             <div class="flex items-center gap-4 pt-6 border-t border-white/5 relative z-10">
+               <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=120" class="w-12 h-12 rounded-lg object-cover grayscale group-hover:grayscale-0 transition-all duration-700 border border-white/10" alt="Ana Paula">
+               <div>
+                 <h4 class="text-white text-sm font-bold">Ana Paula</h4>
+                 <p class="text-gray-500 text-[10px] font-medium uppercase tracking-widest">Coordenadora Social</p>
+               </div>
+             </div>
+          </div>
+          
+          <!-- Call to Action Card - BALANCED & COMPACT -->
+          <a href="#contato" class="bg-brand-accent py-12 px-8 relative overflow-hidden group flex flex-col justify-center items-center text-center transition-all duration-500 hover:shadow-2xl">
+            <div class="relative z-10">
+              <div class="mb-4 relative inline-block">
+                <div class="absolute inset-0 bg-white blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                <i data-lucide="message-square" class="w-10 h-10 text-white relative z-10 transform group-hover:scale-110 transition-transform duration-500"></i>
+              </div>
+              
+              <h4 class="text-white text-2xl font-serif font-bold mb-2 leading-tight">
+                Seu próximo <span class="italic">passo?</span>
+              </h4>
+              
+              <p class="text-white/90 text-xs mb-6 max-w-[200px] mx-auto leading-relaxed">
+                Bora construir o seu case de sucesso junto com o Moacir.
+              </p>
+              
+              <span class="inline-flex items-center gap-2 bg-white text-black px-6 py-2 text-[9px] font-black uppercase tracking-widest group-hover:bg-black group-hover:text-white transition-all">
+                BORA CONVERSAR
+                <i data-lucide="arrow-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFESTYLE GALLERY (RESTORING MISSING SECTION) -->
+  <section id="galeria" class="py-20 md:py-32 bg-brand-black relative overflow-hidden">
+    <div class="container mx-auto px-6 mb-12 md:mb-16">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+        <div class="max-w-2xl">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="h-px w-8 bg-brand-accent"></span>
+            <span class="text-brand-accent font-bold tracking-[0.2em] uppercase text-xs">Lifestyle & Networking</span>
+          </div>
+          <h2 class="text-4xl md:text-6xl font-serif text-white leading-tight">
+            Momentos que <br />
+            <span class="italic text-brand-accent">Constroem Legado.</span>
+          </h2>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <div class="flex gap-4">
+          <button id="scroll-left" class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+          </button>
+          <button id="scroll-right" class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all group">
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horizontal Carousel -->
+    <div id="lifestyle-carousel" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-[5%] md:px-[10%] pb-10">
+      <!-- Card 1 -->
+      <div class="min-w-[300px] md:min-w-[450px] aspect-[4/5] relative group snap-center overflow-hidden rounded-2xl">
+        <img src="assets/moacir-networking-event-1.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Networking">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-brand-accent font-bold text-xs uppercase tracking-widest mb-2">Conexões</p>
+          <h3 class="text-white text-2xl font-serif">Eventos de Networking</h3>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="min-w-[300px] md:min-w-[450px] aspect-[4/5] relative group snap-center overflow-hidden rounded-2xl">
+        <img src="assets/moacir-running-action-1.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Esporte">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-brand-accent font-bold text-xs uppercase tracking-widest mb-2">Performance</p>
+          <h3 class="text-white text-2xl font-serif">Iron Man Challenge</h3>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="min-w-[300px] md:min-w-[450px] aspect-[4/5] relative group snap-center overflow-hidden rounded-2xl">
+        <img src="originals/moacir-vacation-green-shirt-boat.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Lifestyle">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-brand-accent font-bold text-xs uppercase tracking-widest mb-2">Equilíbrio</p>
+          <h3 class="text-white text-2xl font-serif">Momentos de Pausa</h3>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="min-w-[300px] md:min-w-[450px] aspect-[4/5] relative group snap-center overflow-hidden rounded-2xl">
+        <img src="assets/moacir-networking-event-3.webp" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Parcerias">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+        <div class="absolute bottom-8 left-8">
+          <p class="text-brand-accent font-bold text-xs uppercase tracking-widest mb-2">Estratégia</p>
+          <h3 class="text-white text-2xl font-serif">Reuniões de Negócios</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Visual Design 2 + Copy Design 3) -->
+  <footer id="contato" class="bg-brand-black pt-20 md:pt-32 pb-10 border-t border-white/5 relative overflow-hidden">
+    <!-- Background Glow -->
+    <div
+      class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-t from-brand-accent/10 to-transparent pointer-events-none">
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="flex flex-col items-center text-center mb-24">
+        <!-- Copy Design 3 -->
+        <h2 class="text-5xl sm:text-7xl md:text-9xl font-serif text-white mb-6 md:mb-8">
+          Bora trocar <br />
+          <span
+            class="proximo-nivel-text text-brand-accent md:text-transparent md:text-stroke-accent hover:text-white transition-colors duration-700 cursor-default">uma ideia?</span>
+        </h2>
+        <!-- Copy Design 3 -->
+        <p class="text-gray-400 text-lg max-w-xl mb-12">
+          Seja para falar de negócios, esporte ou projetos sociais, as portas estão abertas. Sem burocracia, papo reto entre parceiros.
+        </p>
+        <!-- Copy Design 3 CTAs -->
+        <div class="flex flex-col md:flex-row justify-center gap-6">
+          <a href="#"
+            class="group relative px-10 py-4 bg-white text-black font-black text-base md:text-lg uppercase tracking-widest overflow-hidden">
+            <span class="relative z-10 group-hover:text-white transition-colors">ME CHAMA NO WHATS</span>
+            <div
+              class="absolute inset-0 bg-brand-accent transform translate-y-[110%] transition-transform duration-300 group-hover:translate-y-0 z-0 scale-105">
+            </div>
+          </a>
+          <a href="#"
+            class="flex items-center justify-center gap-2 border border-white/20 hover:border-white text-white font-bold text-base md:text-lg px-10 py-4 uppercase tracking-widest transition-all">
+            <i data-lucide="mail" class="w-5 h-5"></i> MANDAR E-MAIL
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex gap-8">
+          <a href="#" class="text-gray-500 hover:text-brand-accent transition-colors"><i
+              data-lucide="instagram"></i></a>
+          <a href="#" class="text-gray-500 hover:text-brand-accent transition-colors"><i data-lucide="linkedin"></i></a>
+        </div>
+        <div class="text-gray-600 text-xs uppercase tracking-[0.2em]">
+          &copy; 2026 Moacir Oliveira. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL STRUCTURE -->
+  <div id="pillar-modal" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-all duration-500 p-4 md:p-6">
+    <div class="absolute inset-0 bg-brand-black/90 backdrop-blur-xl transition-opacity duration-500 modal-overlay"></div>
+    
+    <div class="relative w-full max-w-5xl bg-brand-dark border border-white/10 rounded-2xl overflow-hidden shadow-2xl transform scale-95 transition-transform duration-500 flex flex-col md:flex-row max-h-[90vh]">
+      <!-- Close Button -->
+      <button class="absolute top-4 right-4 z-50 p-2 bg-black/20 backdrop-blur-md hover:bg-white/20 rounded-full transition-colors close-modal border border-white/10">
+        <i data-lucide="x" class="text-white w-6 h-6"></i>
+      </button>
+
+      <!-- Modal Image Side -->
+      <div class="w-full md:w-1/2 h-64 sm:h-80 md:h-auto relative overflow-hidden bg-brand-black/40">
+        <img id="modal-image" src="" alt="Pilar" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Modal Content Side -->
+      <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-12 overflow-y-auto">
+        <span id="modal-tag" class="text-[10px] text-brand-accent font-bold uppercase tracking-widest block mb-2"></span>
+        <h3 id="modal-title" class="text-3xl md:text-5xl font-serif text-white mb-6"></h3>
+        <div id="modal-description" class="text-gray-400 text-sm md:text-base leading-relaxed space-y-4 mb-8"></div>
+        
+        <div id="modal-extra-images" class="grid grid-cols-2 gap-2 mb-8"></div>
+
+        <a href="#contato" class="inline-flex items-center gap-3 bg-brand-accent text-white px-6 py-3 font-bold text-sm uppercase tracking-widest hover:bg-white hover:text-black transition-all close-modal-cta">
+          Bora Conversar?
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Pillar Modal Logic
+    const modal = document.getElementById('pillar-modal');
+    const modalContent = modal.querySelector('.relative');
+    const pillarCards = document.querySelectorAll('.pillar-card');
+    const closeModalBtns = document.querySelectorAll('.close-modal, .modal-overlay, .close-modal-cta');
+
+    const pillarData = {
+      negocios: {
+        tag: 'Conexões & Resultados',
+        title: 'Ecossistema de Negócios',
+        image: 'assets/moacir-networking-event-1.webp',
+        description: `
+          <p>Através da <strong>Decisor Soluções Comerciais</strong> e parcerias com <strong>Serasa</strong> e <strong>Certificação Digital</strong>, criamos um elo confiável entre empresas e fornecedores.</p>
+          <p>Nosso foco é proporcionar crescimento exponencial com total segurança em cada etapa das negociações. Deixe o operacional com a gente e foque no seu core business.</p>
+          <ul class="list-disc pl-5 space-y-2 text-white/80">
+            <li>Intermediação de Negócios e Serviços</li>
+            <li>Busca e Seleção de Fornecedores Qualificados</li>
+            <li>Gerenciamento de Contratos e Garantia de Prazo</li>
+            <li>Soluções Automotivas e Assinatura Digital</li>
+          </ul>
+        `,
+        extraImages: ['assets/moacir-networking-event-3.webp', 'assets/location-blumenau-city-center.webp']
+      },
+      social: {
+        tag: 'Legado & Propósito',
+        title: 'Impacto Social',
+        image: 'originals/social-projects-group-2.webp',
+        description: `
+          <p>Acredito que o verdadeiro sucesso é medido pelo impacto que causamos na vida das pessoas. Por isso, dedico parte da minha jornada a projetos que transformam realidades.</p>
+          <p>Atuamos diretamente com a <strong>Turma do Bem</strong>, o <strong>Projeto Sorriso</strong> e a <strong>Liga da Superação</strong>, levando dignidade e esperança para quem mais precisa.</p>
+          <p><strong>Bora ser voluntário?</strong> Estamos sempre buscando parceiros que queiram contagiar o mundo com a gente.</p>
+        `,
+        extraImages: ['originals/social-projects-hospital-costumes.webp', 'assets/moacir-running-action-1.webp']
+      },
+      saude: {
+        tag: 'Disciplina & Superação',
+        title: 'Saúde & Alta Performance',
+        image: 'assets/moacir-running-action-1.webp',
+        description: `
+          <p>Minha vida mudou completamente após os 45 anos. O que começou como uma necessidade de saúde tornou-se uma paixão pela alta performance.</p>
+          <p>Como <strong>Iron Man Finisher</strong> e entusiasta de Meias Maratonas, entendi que a disciplina do esporte é o combustível para o sucesso nos negócios e o equilíbrio na família.</p>
+          <p>Não é sobre ser o mais rápido, é sobre a constância e a mentalidade de nunca desistir.</p>
+        `,
+        extraImages: ['assets/moacir-running-action-1.webp', 'assets/moacir-running-action-1.webp']
+      }
+    };
+
+    function openModal(pilar) {
+      const data = pillarData[pilar];
+      if (!data) return;
+
+      document.getElementById('modal-tag').textContent = data.tag;
+      document.getElementById('modal-title').textContent = data.title;
+      document.getElementById('modal-image').src = data.image;
+      document.getElementById('modal-description').innerHTML = data.description;
+      
+      const extraContainer = document.getElementById('modal-extra-images');
+      extraContainer.innerHTML = '';
+      data.extraImages.forEach(imgSrc => {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.className = 'w-full h-24 object-cover rounded-lg border border-white/10 transition-all';
+        extraContainer.appendChild(img);
+      });
+
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-95');
+      modalContent.classList.add('scale-100');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      document.body.style.overflow = 'auto';
+    }
+
+    pillarCards.forEach(card => {
+      card.addEventListener('click', () => {
+        openModal(card.dataset.pilar);
+      });
+    });
+
+    closeModalBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (e.target === btn || btn.classList.contains('close-modal') || btn.closest('.close-modal') || btn.classList.contains('close-modal-cta')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+  <script src="js/menu.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/marquee.js"></script>
+  <script src="js/carousel.js"></script>
+</body>
+
+</html>

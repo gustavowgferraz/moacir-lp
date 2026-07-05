@@ -1,0 +1,13 @@
+/* ==========================================
+   Marquee Animation (Ticker)
+   ========================================== */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.3333%); }
+}
+
+.animate-marquee {
+  /* Fallback de 12s caso o JS ainda não tenha rodado */
+  animation: marquee 12s linear infinite !important;
+  will-change: transform;
+}
